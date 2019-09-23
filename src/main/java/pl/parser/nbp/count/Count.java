@@ -1,6 +1,6 @@
 package pl.parser.nbp.count;
 
-import pl.parser.nbp.Reader.XmlReader;
+import pl.parser.nbp.reader.XmlReader;
 
 import java.text.DecimalFormat;
 
@@ -14,21 +14,21 @@ public class Count {
 
         double sredniaSprzedazy, step1, step2, step3, step4, sume = 0.0, sumaSprzedazy = 0.0;
 
-        for (int i = 0; i < xmlReader.listaSprzedazy.size(); i++) {
+        for (int i = 0; i < xmlReader.listOfSalesPrices.size(); i++) {
 
-            sumaSprzedazy += xmlReader.listaSprzedazy.get(i);
+            sumaSprzedazy += xmlReader.listOfSalesPrices.get(i);
 
         }
-        sredniaSprzedazy = sumaSprzedazy / xmlReader.listaSprzedazy.size();
+        sredniaSprzedazy = sumaSprzedazy / xmlReader.listOfSalesPrices.size();
 
-        for (int i = 0; i < xmlReader.listaSprzedazy.size(); i++) {
-            step1 = xmlReader.listaSprzedazy.get(i) - sredniaSprzedazy;
+        for (int i = 0; i < xmlReader.listOfSalesPrices.size(); i++) {
+            step1 = xmlReader.listOfSalesPrices.get(i) - sredniaSprzedazy;
             step2 = pow(step1, 2.0);
             sume += step2;
 
 
         }
-        step3 = sume / xmlReader.listaSprzedazy.size();
+        step3 = sume / xmlReader.listOfSalesPrices.size();
 
         step4 = sqrt(step3);
 
@@ -40,12 +40,12 @@ public class Count {
         double sredniaKupna;
 
 
-        for (int i = 0; i < xmlReader.listaKupna.size(); i++) {
+        for (int i = 0; i < xmlReader.listOfPrices.size(); i++) {
 
-            sumaKupna += xmlReader.listaKupna.get(i);
+            sumaKupna += xmlReader.listOfPrices.get(i);
 
         }
-        sredniaKupna = sumaKupna / xmlReader.listaKupna.size();
+        sredniaKupna = sumaKupna / xmlReader.listOfPrices.size();
         System.out.println(df.format(sredniaKupna));
     }
 

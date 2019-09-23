@@ -1,8 +1,8 @@
 package pl.parser.nbp;
 
 
-import pl.parser.nbp.Connect.Connect;
-import pl.parser.nbp.Reader.XmlReader;
+import pl.parser.nbp.connect.Connect;
+import pl.parser.nbp.reader.XmlReader;
 import pl.parser.nbp.count.Count;
 import pl.parser.nbp.formatter.InputFormatter;
 
